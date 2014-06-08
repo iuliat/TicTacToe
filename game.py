@@ -1,3 +1,25 @@
+class Player(object):
+
+	board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	moves = ()
+
+	def __init__(self, name, xo):
+		self.name = name
+		self.xo = xo
+
+	def moveTo(self):
+		position = raw_input("Select a cell:")
+
+		if board[position] != 'x' and board[position] != 'o':
+			board[position] = self.xo
+			moves.append(board[position])
+		else:
+			'Cell already taken'
+		return board[position]
+
+	def getMoves(self):
+		return moves;
+
 class Game(Player):
 
 	def __init__(self, player1, player2):
